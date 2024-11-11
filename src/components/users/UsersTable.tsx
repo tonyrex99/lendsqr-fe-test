@@ -12,7 +12,6 @@ import { Dispatch, SetStateAction } from "react";
 
 interface Props {
   users: UserDetails[];
-  loading: boolean;
   setUsers: Dispatch<SetStateAction<UserDetails[]>>;
 }
 
@@ -26,14 +25,13 @@ const tableHeaders = [
   "",
 ];
 
-const UsersTable: FC<Props> = ({ users, loading, setUsers }) => {
+const UsersTable: FC<Props> = ({ users, setUsers }) => {
   const [isFilterOpen, setIsFilterOpen] = useState<null | number>(null);
   const {
     isOpen,
     position,
     dropdownRef,
-    closeDropdown,
-    openDropdown,
+
     toggleDropdown,
   } = useDropdown();
   const [formData, setFormData] = useState<FilterType>({} as FilterType); // Store filter form data
@@ -112,9 +110,7 @@ const UsersTable: FC<Props> = ({ users, loading, setUsers }) => {
                     position={position}
                     dropdownRef={dropdownRef}
                     userId={user.id}
-                    setUsers={(data: any) => {
-                      setUsers(data);
-                    }}
+                    setUsers={setUsers}
                   />
                 )}
               </td>

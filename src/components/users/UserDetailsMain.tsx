@@ -151,7 +151,7 @@ const UserDetailsMain: FC<Props> = ({ user }) => {
       </div>
 
       {user?.guarantor?.slice(1).map((guarantor, index) => (
-        <div className="user-info-card">
+        <div className="user-info-card" key={index}>
           <div key={index} className="user-info-main">
             <div>
               <p>Full Name</p>

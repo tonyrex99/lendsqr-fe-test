@@ -65,7 +65,6 @@ const Users = () => {
           <>
             <UsersTable
               users={currentItems}
-              loading={loading}
               setUsers={(data) => {
                 setUsers(data);
               }}
