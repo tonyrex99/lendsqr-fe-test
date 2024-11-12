@@ -70,7 +70,7 @@ const Users = () => {
               }}
             />
             <div className="users-paginate">
-              <div className="user-page-info">
+              <div className="user-page-info" id="pagination">
                 <p>
                   Showing{" "}
                   <span>
@@ -107,7 +107,7 @@ const Users = () => {
                     width={14}
                     height={14}
                     src={"/images/icons/np_next.svg"}
-                    alt="next image"
+                    alt="previous image"
                   />
                 }
                 pageClassName="page-item"

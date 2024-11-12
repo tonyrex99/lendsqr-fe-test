@@ -73,8 +73,9 @@ const UsersTable: FC<Props> = ({ users, setUsers }) => {
             ))}
           </tr>
         </thead>
-        {users?.length < 1 && <div>No Customers to Show</div>}
+
         <tbody>
+          {users?.length < 1 && <tr data-testid="no-customers"><td>No Customers to Show</td></tr> }
           {users?.map((user: UserDetails, index: number) => (
             <tr key={index}>
               <td>
@@ -93,7 +94,7 @@ const UsersTable: FC<Props> = ({ users, setUsers }) => {
               </td>
               <td>
                 <Image
-                  layout="responsive"
+                 // layout="responsive"
                   width={800}
                   height={800}
                   src="/images/icons/more-icon.svg"

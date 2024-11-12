@@ -17,7 +17,7 @@ const Login = () => {
           />
           <div>
             <Image
-              layout="responsive"
+              // layout="responsive"
               src="/images/login-illus.svg"
               alt="illustration"
               width={800}

@@ -52,14 +52,14 @@ const FilterForm: FC<Props> = ({ setUsers, formData, setFormData }) => {
       onReset={handleReset}
     >
       <div className="form-group">
-        <label htmlFor="organization">Organization</label>
+        <label htmlFor="organization" >Organization</label>
         <select
+        id="organization"
           {...register("organization", {
             required: false,
           })}
         >
           <option value="">Select</option>
-          {/* Map through the organizations and create an option for each */}
           {organizations.map((org, index) => (
             <option key={index} value={org}>
               {org}
@@ -70,6 +70,7 @@ const FilterForm: FC<Props> = ({ setUsers, formData, setFormData }) => {
       <div className="form-group">
         <label htmlFor="username">Username</label>
         <input
+        id="username"
           type="text"
           placeholder="User"
           {...register("username", {
@@ -80,6 +81,7 @@ const FilterForm: FC<Props> = ({ setUsers, formData, setFormData }) => {
       <div className="form-group">
         <label htmlFor="email">Email</label>
         <input
+        id="email"
           type="email"
           placeholder="Email"
           {...register("email", {
@@ -90,6 +92,7 @@ const FilterForm: FC<Props> = ({ setUsers, formData, setFormData }) => {
       <div className="form-group">
         <label htmlFor="dateJoined">Date</label>
         <input
+        id="dateJoined"
           type="date"
           placeholder="Date"
           {...register("dateJoined", {
@@ -100,6 +103,7 @@ const FilterForm: FC<Props> = ({ setUsers, formData, setFormData }) => {
       <div className="form-group">
         <label htmlFor="phone">Phone Number</label>
         <input
+        id="phone"
           type="tel"
           placeholder="Phone Number"
           {...register("phone", {
@@ -110,12 +114,12 @@ const FilterForm: FC<Props> = ({ setUsers, formData, setFormData }) => {
       <div className="form-group">
         <label htmlFor="status">Status</label>
         <select
+        id="status"
           {...register("status", {
             required: false,
           })}
         >
           <option value="">Select</option>
-          {/* Map through the StatusType values and create an option for each */}
           {(
             ["Inactive", "Pending", "Active", "Blacklisted"] as StatusType[]
           ).map((status, index) => (
