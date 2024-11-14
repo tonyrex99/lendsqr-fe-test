@@ -8,7 +8,7 @@ interface NavItem {
 export const navItems: NavItem[] = [
   {
     title: "Switch Organization",
-    icon: "/images/icons/nav-icon-4.svg",
+    icon: "/images/icons/nav-icon-13.svg",
     link: "#",
     id: 1,
   },

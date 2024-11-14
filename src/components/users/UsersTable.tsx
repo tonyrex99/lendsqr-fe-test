@@ -75,7 +75,11 @@ const UsersTable: FC<Props> = ({ users, setUsers }) => {
         </thead>
 
         <tbody>
-          {users?.length < 1 && <tr data-testid="no-customers"><td>No Customers to Show</td></tr> }
+          {users?.length < 1 && (
+            <tr data-testid="no-customers">
+              <td>No Customers to Show</td>
+            </tr>
+          )}
           {users?.map((user: UserDetails, index: number) => (
             <tr key={index}>
               <td>
@@ -94,9 +98,9 @@ const UsersTable: FC<Props> = ({ users, setUsers }) => {
               </td>
               <td>
                 <Image
-                 // layout="responsive"
-                  width={800}
-                  height={800}
+                  layout="responsive"
+                  width={80}
+                  height={80}
                   src="/images/icons/more-icon.svg"
                   alt="more"
                   onClick={(e) => toggleDropdown(e, index)}
