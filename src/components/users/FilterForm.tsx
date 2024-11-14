@@ -26,8 +26,10 @@ const FilterForm: FC<Props> = ({ setUsers, formData, setFormData }) => {
   const watchedValues = watch();
 
   useEffect(() => {
-    setFormData(watchedValues); // Update parent state on form change
-  }, [watchedValues, setFormData]);
+    if (JSON.stringify(watchedValues) !== JSON.stringify(formData)) {
+      setFormData(watchedValues); // Update parent state on form change
+    }
+  }, [watchedValues, setFormData, formData]);
 
   useEffect(() => {
     const uniqueOrganizations = getAllUniqueOrganizations();
@@ -52,9 +54,9 @@ const FilterForm: FC<Props> = ({ setUsers, formData, setFormData }) => {
       onReset={handleReset}
     >
       <div className="form-group">
-        <label htmlFor="organization" >Organization</label>
+        <label htmlFor="organization">Organization</label>
         <select
-        id="organization"
+          id="organization"
           {...register("organization", {
             required: false,
           })}
@@ -70,7 +72,7 @@ const FilterForm: FC<Props> = ({ setUsers, formData, setFormData }) => {
       <div className="form-group">
         <label htmlFor="username">Username</label>
         <input
-        id="username"
+          id="username"
           type="text"
           placeholder="User"
           {...register("username", {
@@ -81,7 +83,7 @@ const FilterForm: FC<Props> = ({ setUsers, formData, setFormData }) => {
       <div className="form-group">
         <label htmlFor="email">Email</label>
         <input
-        id="email"
+          id="email"
           type="email"
           placeholder="Email"
           {...register("email", {
@@ -92,7 +94,7 @@ const FilterForm: FC<Props> = ({ setUsers, formData, setFormData }) => {
       <div className="form-group">
         <label htmlFor="dateJoined">Date</label>
         <input
-        id="dateJoined"
+          id="dateJoined"
           type="date"
           placeholder="Date"
           {...register("dateJoined", {
@@ -103,7 +105,7 @@ const FilterForm: FC<Props> = ({ setUsers, formData, setFormData }) => {
       <div className="form-group">
         <label htmlFor="phone">Phone Number</label>
         <input
-        id="phone"
+          id="phone"
           type="tel"
           placeholder="Phone Number"
           {...register("phone", {
@@ -114,7 +116,7 @@ const FilterForm: FC<Props> = ({ setUsers, formData, setFormData }) => {
       <div className="form-group">
         <label htmlFor="status">Status</label>
         <select
-        id="status"
+          id="status"
           {...register("status", {
             required: false,
           })}
