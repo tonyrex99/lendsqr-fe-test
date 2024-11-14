@@ -6,7 +6,7 @@ import {
   StatusType,
   UserDetails,
 } from "./types";
-
+import { getActiveUsersCount } from "@/lib/utils/store";
 const topBanksInNigeria = [
   "Access Bank",
   "Zenith Bank",
@@ -183,21 +183,21 @@ export const usersStats = [
   {
     title: "Users",
     icon: "/images/icons/user-stat-icon-1.svg",
-    count: "2,453",
+    count: "500",
   },
   {
     title: "Active Users",
     icon: "/images/icons/user-stat-icon-2.svg",
-    count: "2,453",
+    count: String(getActiveUsersCount()),
   },
   {
     title: "Users with loans",
     icon: "/images/icons/user-stat-icon-3.svg",
-    count: "12,453",
+    count: "300",
   },
   {
     title: "Users with savings",
     icon: "/images/icons/user-stat-icon-4.svg",
-    count: "102,453",
+    count: "200",
   },
 ];
